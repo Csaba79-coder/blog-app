@@ -3,7 +3,7 @@
 3. add doc directory with task.adoc (includes what to do!)
 4. start planning! (create the txt) and build up project step by step!
 5. make from maven a Spring project
-6. regarding planning collecting dependencies for pom.xml (jpa, lombok, spring, web, etc.) - using Spring Security! using JPA - for MySQL connection and using for testing  H2-console (so separate test and real application! - test/dev and production) - and the favourite lombok ...
+6. regarding planning collecting dependencies for pom.xml (jpa, lombok, spring, web, etc.) - using Spring Security! using JPA - for MySQL connection and using for testing  H2-console/H2-database (so separate test and real application! - test/dev and production) - and the favourite lombok ...
 7. creating main packages and classes
 8. creating Spring from project!
 
