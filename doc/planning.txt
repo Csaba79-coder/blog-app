@@ -1,0 +1,44 @@
+1. Creating a maven project in IntelliJ
+2. make .gitignore file
+3. add doc directory with task.adoc (includes what to do!)
+4. start planning! (create the txt) and build up project step by step!
+5. make from maven a Spring project
+6. regarding planning collecting dependencies for pom.xml (jpa, lombok, spring, web, etc.) - using Spring Security! using JPA - for MySQL connection and using for testing  H2-console (so separate test and real application! - test/dev and production) - and the favourite lombok ...
+7. creating main packages and classes
+8. creating Spring from project!
+
+9. Creating application.properties & make config in run -> edit configuration -> real password's been hidden here!
+
+OK!!! STOP ... let's start from the beginning ... create immediately spring project with the required dependencies for me more easy, and better! ...
+
+In packages (regarding the task):
+model:
+- User
+- Blog
+- UserAuthority
+service:
+- UserService & BlogService these are interfaces, and their implementations!
+repositories (all model has one!):
+- UserRepository
+- BlogRepository
+- UserAuthorityRepository
+controller:
+- BlogController & UserController
+config:
+- SecurityConfig
+
+10. Creating User, UserAuthority and Blog
+
+11. Making Blog and UserServices and their implementations!
+
+12. Create Repositories
+
+13. Create Controllers
+
+14. Create config -> security config
+
+15. Create tests
+
+16. Test requires user authority that needs username + password to be sent as JSON, and we had this annotation: @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+
+IMPORTANT!!! the real username and password for MySQl is saved in environment-variables!!! that overwrites the fake one in application.properties!

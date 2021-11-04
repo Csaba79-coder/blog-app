@@ -1,0 +1,99 @@
+= Blog REST alkalmazás
+
+A feladat az előző kötelező házi Blog alkalmazásának “Spring-esítése”, vagyis Spring REST alkalmazássá tétele a Spring keretrendszer és JPA használatával.
+
+- Az alkalmazás controller-jei @RestController-ek legyenek.
+- Az alkalmazás mögötti adatbázis a JPA-val jöjjön létre, valamint az adatbázis használata is JPA-val történjen.
+- Az alkalmazás biztonságáról (a felhasználók bejelentkezéséről stb.) a Spring Security gondoskodjon.
+
+'''
+
+ A felhasználók jelszavai csak és kizárólag titkosítva kerülhetnek az adatbázisba!
+
+'''
+
+== Megvalósítandó felépítés
+
+●	model osztályok létrehozása
+
+    ○	ezek leírják az alkalmazásban használt objektumokat
+
+    ○	valamint belőlük készül az alkalmazás adatbázisa
+
+●	service osztályok létrehozása
+
+    ○	ezek végzik az “üzleti logikát” (adatok lekérése adatbázisból, adatok írása adatbázisba, objektumok kezelése stb.)
+
+●	controller osztályok létrehozása
+
+    ○	ezek fogadnak HTTP-kéréseket
+
+    ○	valamint küldenek HTTP-válaszokat
+
+    ○	továbbá dolgoztatják a service-eket
+
+== Megvalósítandó endpoint-ok
+
+●	/users
+
+○	method: GET
+
+○	feladat: visszaadja az összes felhasználót az adatbázisból
+
+●	/users/{id}
+
+○	method: GET
+
+○	@PathVariable Long id
+
+○	feladat: visszaadja az adott id-jű felhasználót adatbázisból
+
+○	megjegyzés: ha nincs szám típusú id-ja a felhasználóidnak, akkor ebben az endpoint-ban lecserélhető a Long id arra az adattípusra, amilyen PRIMARY KEY-t használsz
+
+●	/user
+
+○	method: GET
+
+○	feladat: visszaadja a bejelentkezett felhasználót
+
+●	/register
+
+○	method: POST
+
+○	@RequestBody User user
+
+○	feladat: új felhasználót rögzít az adatbázisba
+
+○	megjegyzés: a User típus nem kötelező - a saját felhasználói típusodat használd
+
+●	/blogs
+
+○	method: GET
+
+○	feladat: visszaadja az összes blogot az adatbázisból
+
+●	/blogs
+
+○	method: POST
+
+○	@RequestBody Blog blog
+
+○	feladat: új blogot rögzít az adatbázisba
+
+○	megjegyzés: a felhasználónak be kell jelentkeznie új blog készítéséhez
+
+
+=== Osztályok, metódusok
+
+Csak azokat az osztályokat és metódusokat kell megvalósítani, amelyek a fent leírt endpoint-okhoz feltétlenül szükségesek.
+
+Az adatbázis létrehozásához és működéséhez szükséges model-osztályok kötelezőek, azonban az adatok feldolgozását végző service-ek (és metódusaik) nem feltétlen kellenek.
+
+Például nem kell új blogbejegyzés írására endpoint-ot írni, ezért nem szükséges külön BlogPostService osztály és writePost(Post post) metódus sem.
+
+'''
+
+=== Bónuszok
+
+1.	Szerepkörök (authority-k) kezelésének megvalósítása. (Például az összes felhasználó adatait csak admin tekinthesse meg.)
+2.	Az alkalmazás teljes tesztelése (legalább 80%-os teszt-lefedettséggel).
