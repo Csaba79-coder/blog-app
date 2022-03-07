@@ -82,7 +82,7 @@
     </build>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:Csaba79-coder/blog-app</developerConnection>
+        <developerConnection>scm:git:git@github.com:Csaba79-coder/thinThere</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
